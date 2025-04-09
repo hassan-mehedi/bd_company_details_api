@@ -1,0 +1,53 @@
+import mongoose, { Schema, Document } from "mongoose";
+import { Company } from "../types";
+
+export interface CompanyDocument extends Company, Document {}
+
+const companySchema = new Schema<CompanyDocument>(
+    {
+        code: {
+            type: String,
+            required: true,
+            unique: true,
+            trim: true,
+        },
+        name: {
+            type: String,
+            required: true,
+            trim: true,
+        },
+        type: {
+            type: String,
+            required: true,
+            trim: true,
+        },
+        status: {
+            type: String,
+            required: true,
+            trim: true,
+        },
+        description: {
+            type: String,
+            required: true,
+        },
+        image: {
+            type: String,
+            required: true,
+        },
+        alternatives: {
+            type: String,
+            default: "",
+        },
+        tags: {
+            type: String,
+            default: "",
+        },
+    },
+    {
+        timestamps: true,
+    }
+);
+
+const CompanyModel = mongoose.model<CompanyDocument>("Company", companySchema);
+
+export default CompanyModel;

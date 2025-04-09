@@ -1,0 +1,74 @@
+@baseUrl = YOUR_BASE_URL_HERE
+@apiToken = YOUR_API_TOKEN_HERE
+
+### Get welcome message
+GET {{baseUrl}}
+
+### Get all companies (public)
+GET {{baseUrl}}/api/companies
+Content-Type: application/json
+
+### Get all companies with pagination (public)
+GET {{baseUrl}}/api/companies?page=1&limit=10
+Content-Type: application/json
+
+### Get company by code (public)
+GET {{baseUrl}}/api/companies/AAPL
+Content-Type: application/json
+
+### Create a new company (protected)
+POST {{baseUrl}}/api/companies
+Content-Type: application/json
+Authorization: Bearer {{apiToken}}
+
+{
+  "code": "GOOG",
+  "name": "Google LLC",
+  "description": "Technology company specializing in Internet-related services and products",
+  "website": "https://www.google.com",
+  "sector": "Technology",
+  "industry": "Internet Content & Information",
+  "type": "Corporation",
+  "status": "Active",
+  "image": "https://example.com/google-logo.png"
+}
+
+### Create multiple companies at once (protected)
+POST {{baseUrl}}/api/companies
+Content-Type: application/json
+Authorization: Bearer {{apiToken}}
+
+[
+  {
+    "code": "MSFT",
+    "name": "Microsoft Corporation",
+    "description": "Technology company developing software and hardware",
+    "website": "https://www.microsoft.com",
+    "sector": "Technology",
+    "industry": "Software Infrastructure",
+    "type": "Corporation",
+    "status": "Active",
+    "image": "https://example.com/microsoft-logo.png"
+  },
+  {
+    "code": "META",
+    "name": "Meta Platforms, Inc.",
+    "description": "Social media and technology company",
+    "website": "https://www.meta.com",
+    "sector": "Technology",
+    "industry": "Internet Content & Information",
+    "type": "Corporation",
+    "status": "Active",
+    "image": "https://example.com/meta-logo.png"
+  }
+]
+
+### Update a company (protected)
+PATCH {{baseUrl}}/api/companies/GOOG
+Content-Type: application/json
+Authorization: Bearer {{apiToken}}
+
+{
+  "name": "Alphabet Inc.",
+  "description": "Updated description for Google's parent company"
+}
