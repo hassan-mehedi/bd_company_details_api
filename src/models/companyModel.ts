@@ -39,8 +39,8 @@ const companySchema = new Schema<CompanyDocument>(
             default: "",
         },
         tags: {
-            type: String,
-            default: "",
+            type: [String],
+            default: [],
         },
     },
     {

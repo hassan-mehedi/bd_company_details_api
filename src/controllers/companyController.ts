@@ -64,17 +64,15 @@ export const updateCompany = async (req: Request, res: Response) => {
         const { code } = req.params;
         const updateData = req.body;
 
-        const company = await CompanyModel.findOneAndUpdate({ code }, updateData, { new: true, runValidators: true });
-
-        if (!company) {
-            return res.status(404).json({
-                status: "error",
-                message: `Company with code ${code} not found`,
-            });
-        }
+        const company = await CompanyModel.findOneAndUpdate({ code }, updateData, {
+            new: true,
+            runValidators: true,
+            upsert: true,
+        });
 
         return res.status(200).json({
             status: "success",
+            message: company.isNew ? "Company created successfully" : "Company updated successfully",
             data: { company },
         });
     } catch (error: any) {

@@ -8,7 +8,7 @@ export interface Company {
     description: string;
     image: string;
     alternatives: string;
-    tags: string;
+    tags: string[];
 }
 
 export interface ExtendedRequest extends Request {

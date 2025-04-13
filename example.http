@@ -30,7 +30,8 @@ Authorization: Bearer {{apiToken}}
   "industry": "Internet Content & Information",
   "type": "Corporation",
   "status": "Active",
-  "image": "https://example.com/google-logo.png"
+  "image": "https://example.com/google-logo.png",
+  "tags": ["search", "advertising", "cloud", "android"]
 }
 
 ### Create multiple companies at once (protected)
@@ -48,7 +49,8 @@ Authorization: Bearer {{apiToken}}
     "industry": "Software Infrastructure",
     "type": "Corporation",
     "status": "Active",
-    "image": "https://example.com/microsoft-logo.png"
+    "image": "https://example.com/microsoft-logo.png",
+    "tags": ["windows", "office", "cloud", "azure"]
   },
   {
     "code": "META",
@@ -59,16 +61,35 @@ Authorization: Bearer {{apiToken}}
     "industry": "Internet Content & Information",
     "type": "Corporation",
     "status": "Active",
-    "image": "https://example.com/meta-logo.png"
+    "image": "https://example.com/meta-logo.png",
+    "tags": ["social", "metaverse", "facebook", "instagram"]
   }
 ]
 
-### Update a company (protected)
+### Update a company (protected - supports upsert)
 PATCH {{baseUrl}}/api/companies/GOOG
 Content-Type: application/json
 Authorization: Bearer {{apiToken}}
 
 {
   "name": "Alphabet Inc.",
-  "description": "Updated description for Google's parent company"
+  "description": "Updated description for Google's parent company",
+  "tags": ["search", "advertising", "AI", "parent company"]
+}
+
+### Create a new company via upsert (if code doesn't exist)
+PATCH {{baseUrl}}/api/companies/NFLX
+Content-Type: application/json
+Authorization: Bearer {{apiToken}}
+
+{
+  "name": "Netflix, Inc.",
+  "description": "Entertainment company specializing in streaming services",
+  "website": "https://www.netflix.com",
+  "sector": "Communication Services",
+  "industry": "Entertainment",
+  "type": "Corporation",
+  "status": "Active",
+  "image": "https://example.com/netflix-logo.png",
+  "tags": ["streaming", "entertainment", "movies", "series"]
 }
