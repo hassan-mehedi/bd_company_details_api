@@ -10,6 +10,7 @@ export const companySchema = z.object({
     image: z.string().min(1, "Image URL is required"),
     alternatives: z.string().optional(),
     tags: z.array(z.string()).optional(),
+    brands: z.array(z.string()).optional(),
 });
 
 // Schema for creating a single company

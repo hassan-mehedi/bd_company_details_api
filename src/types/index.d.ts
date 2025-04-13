@@ -9,6 +9,7 @@ export interface Company {
     image: string;
     alternatives: string;
     tags: string[];
+    brands: string[];
 }
 
 export interface ExtendedRequest extends Request {

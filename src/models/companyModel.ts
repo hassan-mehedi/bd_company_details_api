@@ -42,6 +42,10 @@ const companySchema = new Schema<CompanyDocument>(
             type: [String],
             default: [],
         },
+        brands: {
+            type: [String],
+            default: [],
+        },
     },
     {
         timestamps: true,
