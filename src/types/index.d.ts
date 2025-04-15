@@ -7,7 +7,7 @@ export interface Company {
     status: string;
     description: string;
     image: string;
-    alternatives: string;
+    alternatives: string[];
     origin: string;
     source: string;
     tags: string[];

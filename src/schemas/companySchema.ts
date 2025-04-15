@@ -8,7 +8,7 @@ export const companySchema = z.object({
     status: z.string().optional(),
     description: z.string().optional(),
     image: z.string().optional(),
-    alternatives: z.string().optional(),
+    alternatives: z.array(z.string()).optional(),
     origin: z.string().optional(),
     source: z.string().optional(),
     tags: z.array(z.string()).optional(),

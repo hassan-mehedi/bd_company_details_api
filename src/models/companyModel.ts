@@ -18,13 +18,9 @@ const companySchema = new Schema<CompanyDocument>(
         },
         type: {
             type: String,
-
-            trim: true,
         },
         status: {
             type: String,
-
-            trim: true,
         },
         description: {
             type: String,
@@ -33,8 +29,8 @@ const companySchema = new Schema<CompanyDocument>(
             type: String,
         },
         alternatives: {
-            type: String,
-            default: "",
+            type: [String],
+            default: [],
         },
         origin: {
             type: String,
