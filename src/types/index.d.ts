@@ -8,6 +8,8 @@ export interface Company {
     description: string;
     image: string;
     alternatives: string;
+    origin: string;
+    source: string;
     tags: string[];
     brands: string[];
 }

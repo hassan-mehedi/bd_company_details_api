@@ -25,13 +25,14 @@ Authorization: Bearer {{apiToken}}
   "code": "GOOG",
   "name": "Google LLC",
   "description": "Technology company specializing in Internet-related services and products",
-  "website": "https://www.google.com",
-  "sector": "Technology",
-  "industry": "Internet Content & Information",
   "type": "Corporation",
   "status": "Active",
   "image": "https://example.com/google-logo.png",
-  "tags": ["search", "advertising", "cloud", "android"]
+  "alternatives": "Alphabet Inc.",
+  "origin": "USA",
+  "source": "Manual Entry",
+  "tags": ["search", "advertising", "cloud", "android"],
+  "brands": ["Android", "Gmail", "YouTube", "Chrome"]
 }
 
 ### Create multiple companies at once (protected)
@@ -44,25 +45,27 @@ Authorization: Bearer {{apiToken}}
     "code": "MSFT",
     "name": "Microsoft Corporation",
     "description": "Technology company developing software and hardware",
-    "website": "https://www.microsoft.com",
-    "sector": "Technology",
-    "industry": "Software Infrastructure",
     "type": "Corporation",
     "status": "Active",
     "image": "https://example.com/microsoft-logo.png",
-    "tags": ["windows", "office", "cloud", "azure"]
+    "alternatives": "MS",
+    "origin": "USA",
+    "source": "Manual Entry",
+    "tags": ["windows", "office", "cloud", "azure"],
+    "brands": ["Windows", "Office", "Xbox", "Azure"]
   },
   {
     "code": "META",
     "name": "Meta Platforms, Inc.",
     "description": "Social media and technology company",
-    "website": "https://www.meta.com",
-    "sector": "Technology",
-    "industry": "Internet Content & Information",
     "type": "Corporation",
     "status": "Active",
     "image": "https://example.com/meta-logo.png",
-    "tags": ["social", "metaverse", "facebook", "instagram"]
+    "alternatives": "Facebook Inc.",
+    "origin": "USA",
+    "source": "Manual Entry",
+    "tags": ["social", "metaverse", "facebook", "instagram"],
+    "brands": ["Facebook", "Instagram", "WhatsApp", "Oculus"]
   }
 ]
 
@@ -74,7 +77,9 @@ Authorization: Bearer {{apiToken}}
 {
   "name": "Alphabet Inc.",
   "description": "Updated description for Google's parent company",
-  "tags": ["search", "advertising", "AI", "parent company"]
+  "alternatives": "Google LLC",
+  "tags": ["search", "advertising", "AI", "parent company"],
+  "brands": ["Android", "Gmail", "YouTube", "Chrome", "Waymo"]
 }
 
 ### Create a new company via upsert (if code doesn't exist)
@@ -85,11 +90,12 @@ Authorization: Bearer {{apiToken}}
 {
   "name": "Netflix, Inc.",
   "description": "Entertainment company specializing in streaming services",
-  "website": "https://www.netflix.com",
-  "sector": "Communication Services",
-  "industry": "Entertainment",
   "type": "Corporation",
   "status": "Active",
   "image": "https://example.com/netflix-logo.png",
-  "tags": ["streaming", "entertainment", "movies", "series"]
+  "alternatives": "NFLX",
+  "origin": "USA",
+  "source": "Manual Entry",
+  "tags": ["streaming", "entertainment", "movies", "series"],
+  "brands": ["Netflix Originals", "Netflix Studios"]
 }

@@ -4,11 +4,13 @@ import { z } from "zod";
 export const companySchema = z.object({
     code: z.string().min(1, "Code is required"),
     name: z.string().min(1, "Name is required"),
-    type: z.string().min(1, "Type is required"),
-    status: z.string().min(1, "Status is required"),
-    description: z.string().min(1, "Description is required"),
-    image: z.string().min(1, "Image URL is required"),
+    type: z.string().optional(),
+    status: z.string().optional(),
+    description: z.string().optional(),
+    image: z.string().optional(),
     alternatives: z.string().optional(),
+    origin: z.string().optional(),
+    source: z.string().optional(),
     tags: z.array(z.string()).optional(),
     brands: z.array(z.string()).optional(),
 });

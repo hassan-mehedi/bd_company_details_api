@@ -18,23 +18,29 @@ const companySchema = new Schema<CompanyDocument>(
         },
         type: {
             type: String,
-            required: true,
+
             trim: true,
         },
         status: {
             type: String,
-            required: true,
+
             trim: true,
         },
         description: {
             type: String,
-            required: true,
         },
         image: {
             type: String,
-            required: true,
         },
         alternatives: {
+            type: String,
+            default: "",
+        },
+        origin: {
+            type: String,
+            default: "",
+        },
+        source: {
             type: String,
             default: "",
         },
